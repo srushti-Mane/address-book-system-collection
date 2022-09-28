@@ -4,7 +4,7 @@ public class Contact {
     private String firstName, lastName, address, city, state, email;
     private int zip;
     private long phoneNumber;
-    public Contact(String firstName, String lastName, String address, String city, String state, String email, int zip, long phoneNumber) {
+    public Contact() {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;

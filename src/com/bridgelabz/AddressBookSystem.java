@@ -1,23 +1,47 @@
 package com.bridgelabz;
+import java.util.ArrayList;
+import java.util.Scanner;
 public class AddressBookSystem {
 
-    public static void main(String[] args) {
-            System.out.println("Welcome to Address Book System\n");
-            /**
-             * We are just calling an object using class name.
-             * Simply passing the argument value according to the parameter defined in the constructor.
-             */
-            Contact details = new Contact("Srushti", "Mane-Deshmukh", "Shirol", "Shirol",
-                    "Maharashtra", "srushtideshmukh2909@gmail.com", 4164103, 9689509560L);
-            System.out.println("The following contact details is mentioned below : \n");
-            System.out.println("First Name : " + details.getFirstName());
-            System.out.println("Last Name  : " + details.getLastName());
-            System.out.println("Address    : " + details.getAddress());
-            System.out.println("City       : " + details.getCity());
-            System.out.println("State      : " + details.getState());
-            System.out.println("E-mail     : " + details.getEmail());
-            System.out.println("Zip Code   : " + details.getZip());
-            System.out.println("Phone No   : " + details.getPhoneNumber());
+        /**
+         * create a array list object
+         * The ArrayList class of the Java collections framework provides
+         * the functionality of resizable-arrays.
+         * It implements the List interface.
+         */
+        ArrayList<Contact> arrayDetails = new ArrayList<Contact>();
+        Scanner sc = new Scanner(System.in);
+        public void addDetails() {
+            Contact info = new Contact();
+
+            System.out.println("Enter the first name");
+            info.setFirstName(sc.nextLine());
+            System.out.println("Enter the last name");
+            info.setLastName(sc.nextLine());
+            System.out.println("Enter the address");
+            info.setAddress(sc.nextLine());
+            System.out.println("Enter the city");
+            info.setCity(sc.nextLine());
+            System.out.println("Enter the state");
+            info.setState(sc.nextLine());
+            System.out.println("Enter the email");
+            info.setEmail(sc.nextLine());
+            System.out.println("Enter the zip code");
+            info.setZip(sc.nextInt());
+            System.out.println("Enter the phone number");
+            info.setPhoneNumber(sc.nextLong());
+            arrayDetails.add(info);
+            sc.close();
+        }
+
+        public void display() {
+            System.out.println(arrayDetails);
+        }
+        public static void main(String[] args) {
+            System.out.println("Welcome to Address Book Program");
+            AddressBookSystem details = new AddressBookSystem();
+            details.addDetails();
+            details.display();
         }
     }
 
